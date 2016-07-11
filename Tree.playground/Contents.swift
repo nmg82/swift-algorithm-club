@@ -1,13 +1,13 @@
-class Node {
-  let value: String
-  var children = [Node]()
+class Node<T> {
+  let value: T
+  var children = [Node<T>]()
   weak var parent: Node?
   
-  init(value: String) {
+  init(value: T) {
     self.value = value
   }
   
-  func addChild(node: Node) {
+  func addChild(node: Node<T>) {
     children.append(node)
     node.parent = self
   }
@@ -23,8 +23,8 @@ extension Node: CustomStringConvertible {
   }
 }
 
-extension Node {
-  func search(value: String) -> Node? {
+extension Node where T: Equatable {
+  func search(value: T) -> Node? {
     if value == self.value {
       return self
     }
@@ -79,3 +79,5 @@ print(beverages)
 beverages.search("cocoa")
 beverages.search("chai")
 beverages.search("bubbly")
+
+let number = Node(value: 5)
