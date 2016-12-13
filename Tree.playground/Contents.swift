@@ -7,7 +7,7 @@ class Node<T> {
     self.value = value
   }
   
-  func addChild(node: Node<T>) {
+  func addChild(_ node: Node<T>) {
     children.append(node)
     node.parent = self
   }
@@ -17,14 +17,14 @@ extension Node: CustomStringConvertible {
   var description: String {
     var text = "\(value)"
     if !children.isEmpty {
-      text += " {" + children.map{ $0.description }.joinWithSeparator(", ") + "} "
+      text += " {" + children.map{ $0.description }.joined(separator: ", ") + "} "
     }
     return text
   }
 }
 
 extension Node where T: Equatable {
-  func search(value: T) -> Node? {
+  func search(_ value: T) -> Node? {
     if value == self.value {
       return self
     }
