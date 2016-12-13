@@ -1,3 +1,5 @@
+//: [github walkthrough](@next)
+
 class Node<T> {
   let value: T
   var children = [Node<T>]()
@@ -81,3 +83,5 @@ beverages.search("chai")
 beverages.search("bubbly")
 
 let number = Node(value: 5)
+
+//: [github walkthrough](@next)
