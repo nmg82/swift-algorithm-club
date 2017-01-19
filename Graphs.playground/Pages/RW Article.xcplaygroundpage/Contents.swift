@@ -28,3 +28,5 @@ adjacencyList.weight(from: singapore, to: tokyo)
 
 let edges = adjacencyList.edges(from: sanFrancisco)
 edges?.forEach { print($0.destination) }
+
+//: [Next](@next)
